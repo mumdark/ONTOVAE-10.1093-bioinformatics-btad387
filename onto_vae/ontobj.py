@@ -376,7 +376,7 @@ class Ontobj():
             masks = self._encoder_masks(depth, bin_mat_list)
 
         # store masks
-        self.masks[str(top_thresh) + '_' + str(bottom_thresh)][module] = masks
+        self.masks[str(top_thresh) + '_' + str(bottom_thresh)][module] = masks          # 这个位置有点奇怪，掩码矩阵根据不同模块分别存到了一个字典中，但是后面使用的时候不进行提取的话就会报错
 
 
     def _decoder_masks(self, depth, bin_mat_list):
